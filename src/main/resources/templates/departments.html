@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="layouts/masterlayout :: layout(~{::main})">
+
+<body>
+<main role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Department Update</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="" th:action="@{/department/save-update}" th:object="${departmentU}" method="post">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" th:field="*{name}">
+                            </div>
+                            <div class="form-group">
+                                <label>Country</label>
+                                <input type="text" class="form-control" th:field="*{country}">
+                            </div>
+                            <div class="form-group">
+                                <label>Code</label>
+                                <input type="text" class="form-control" th:field="*{code}">
+                            </div>
+
+                            <button class="btn btn-lg btn-primary" type="submit">Update Department</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+</body>
+</html>

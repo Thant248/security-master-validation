@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  th:replace="layouts/masterlayout :: layout(~{::main})">
+
+<body>
+<main role="main">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            <h3>DepartmentForm</h3>
+          </div>
+          <div class="card-body">
+            <form action="" th:action="@{/department/save}" th:object="${department}" method="post">
+
+              <div class="form-group">
+                <label>Code</label>
+                <input type="text" th:field="*{code}" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" th:field="*{name}" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Country</label>
+                <input type="text" th:field="*{country}" class="form-control">
+              </div>
+              <input type="submit" value="Save" class="btn btn-lg btn-primary">
+
+            </form>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

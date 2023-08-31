@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="layouts/masterlayout ::  layout(~{::main})">
+
+<body>
+<main role="main">
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Person List</h3>
+                    </div>
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                            <th>Email</th>
+                            <th>UserName</th>
+                            <th>Password</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="per : ${persons}">
+                            <td th:text="${per.id}"></td>
+                            <td th:text="${per.firstName}"></td>
+                            <td th:text="${per.lastName}"></td>
+                            <td th:text="${per.email}"></td>
+                            <td th:text="${per.userName}"></td>
+                            <td th:text="${per.password}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
